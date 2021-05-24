@@ -26,4 +26,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           header: "Latest issue close by: ${{ github.actor }}."
-
+          repoCount: 0
