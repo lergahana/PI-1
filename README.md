@@ -1,4 +1,10 @@
-# PI-1
-dodavanje readme fajla
-dodavanje akcije
+## Latest issue close by: lergahana.
+
+
+
+---
+
+
+
+---
 
