@@ -1,0 +1,9 @@
+name: Zadatak 1
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Novi događaj
+        run:
+          echo "Trigger -${{ github.action }}, user - ${{ github.actor }}, date - `date`"
