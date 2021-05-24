@@ -1,0 +1,29 @@
+#Izraditi GitHub Akciju za sljedeći scenarij. Svaki put kada se issue zatvori (close),
+#apdejtati README sa sljedećim tekstom “Latest issue closed by: <username>”, pri
+#čemu <username> označava korisnika koji je zatvorio issue.
+
+name: Zadatak 2
+
+# Controls when the action will run. 
+on:
+ issues:
+    types: [closed]
+ pull_request:
+    types: [closed]
+    
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Update GitHub Profile README
+        uses: theboi/github-update-readme@v1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          header: "Latest issue close by: ${{ github.actor }}."
+
